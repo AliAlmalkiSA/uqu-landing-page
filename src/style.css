@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+@theme {
+  --color-primary-50: #f2fbf7;
+  --color-primary-100: #e1f5ec;
+  --color-primary-200: #c5ebd9;
+  --color-primary-300: #9bdbc0;
+  --color-primary-400: #6ac3a1;
+  --color-primary-500: #43a683;
+  --color-primary-600: #2f8768;
+  --color-primary-700: #276c55;
+  --color-primary-800: #235645;
+  --color-primary-900: #1d473a;
+  --color-primary-950: #0f2821;
+
+  --color-gold-500: #D4AF37;
+
+  --font-sans: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-700 to-primary-500;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+[x-cloak] {
+  display: none !important;
+}
